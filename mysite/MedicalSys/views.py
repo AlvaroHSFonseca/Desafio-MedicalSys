@@ -17,7 +17,7 @@ def index(request):
 
 @login_required
 def pacientes(request):
-    dadosPaciente = Pacientes.objects.order_by('-data')[:10]
+    dadosPaciente = Pacientes.objects.order_by('-data')[:6]
     context = {'dadosPaciente': dadosPaciente}
     return render( request, 'MedicalSys/pacientes.html', context)
 
@@ -50,7 +50,7 @@ def delete_paciente(request, id):
 
 @login_required
 def medicos(request):
-    dadosMedicos = Medicos.objects.order_by('-data')[:10]
+    dadosMedicos = Medicos.objects.order_by('-data')[:6]
     context = {'dadosMedicos': dadosMedicos}
     return render(request, 'MedicalSys/medicos.html', context)
 
